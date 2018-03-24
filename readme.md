@@ -37,7 +37,7 @@ plink --file [filename] --make-bed
 
 ### 合并
 
-计算亲属关系需要关联多个人的基因数据。
+计算亲属关系需要关联多个人的基因数据。
 
 不同人的多个文件需要合并为一个文件。查看[合并](http://www.cog-genomics.org/plink/1.9/data#merge_list)的更多消息
 
@@ -47,14 +47,14 @@ plink --file [filename1] --merge-list merge.txt --make-bed --out mydata
 
 `[filename1]`为基准文件，与其他人的数据合并。
 
-`--merge-list merge.txt`为需要合并的其他人的文件列表，格式为：
+`--merge-list merge.txt`为需要合并的其他人的文件列表，格式为：
 
 ```
 user_2.ped user_2.map
 user_3.ped user_3.map
 ```
 
-如果`--out mydata`默认输出 mydata 文件名的相关数据，否则默认为 plink 文件名。
+如果`--out mydata`默认输出 mydata 文件名的相关数据，否则默认为 plink 文件名。
 
 例如：
 
@@ -118,11 +118,11 @@ biocLite("SNPRelate")
 
 或者直接下载对应的安装包，通过 R GUI 窗口安装包。
 
-+ 打开工具栏packages&data
++ 打开工具栏 packages&data
 + package install
-+ 选择packages repoitory(bioconductor(binaries))
-+ get list同时勾选右下角install dependencies
-+ 搜索SNPRelate安装
++ 选择 packages repoitory(bioconductor(binaries))
++ get list 同时勾选右下角 install dependencies
++ 搜索 SNPRelate 安装
 
 ![install](/pictrue/Snipaste_2018-03-24_16-41-10.png)
 
