@@ -1,6 +1,9 @@
 # 利用个人的基因数据计算亲属关系
 
-## 数据格式的变化和合并
+## [PLINK](http://www.cog-genomics.org/plink/1.9/)
+
+基于PLINK 1.90 beta OS X (64-bit)
+### 数据格式的变化和合并
 
 如果数据不是 PLINK 格式，需要转化为这种格式。
 
