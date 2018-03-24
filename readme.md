@@ -1,31 +1,64 @@
 # 利用个人的基因数据计算亲属关系
 
+平台OS X (64-bit)
+
 ## [PLINK](http://www.cog-genomics.org/plink/1.9/)
 
-基于PLINK 1.90 beta OS X (64-bit)
-### 数据格式的变化和合并
+基于PLINK 1.90 beta。
 
-如果数据不是 PLINK 格式，需要转化为这种格式。
+### 处理数据
 
-mycodon 格式转化为 PLINK 格式：
+如果数据不是 PLINK 格式（`*.ped` 和 `*.map`），需要转化为这种格式。
+
+#### 转化
+
+如果数据是 23andme 的格式，你需要使用 [Python](http://www.jade-cheng.com/au/23andme-to-plink/23andme-to-plink.py) 程序进行转化成 PLINK 格式，本项目运行于 [Python 3.6.4](https://www.python.org/downloads/release/python-364/)。
+
 ```cmd
-python3 mycodon_to_plink.py [-h] [--gender [GENDER]] path
+python3 23andme_to_plink.py [-h] [--gender [GENDER]] path
 
 ```
 
-如果数据是 23andme 的格式，你需要使用 [Python](http://www.jade-cheng.com/au/23andme-to-plink/23andme-to-plink.py) 程序进行转化成 PLINK 格式
+转换之后的格式为 `*.ped` 和 `*.map`。
 
-转换之后的格式为 `*.ped` 和 `*.map`。他们需要使用下面的命令转化为二进制文件(`*.bed`、`*.fam` 、`*.bim`)：
+例如：
+
+```cmd
+python3 23andme_to_plink.py user_1.txt
+```
+
+结果生成`user_1.ped`和`user_1.map`。
+
+可以使用下面的命令进一步转化为二进制文件(`*.bed`、`*.fam` 、`*.bim`)：
+
 ```cmd
 plink --file [filename] --make-bed
 ```
 
-不同人的多个文件需要合并为一个文件。查看[合并](http://zzz.bwh.harvard.edu/plink/dataman.shtml#mergelist)的更多消息
+### 合并
+
+计算亲属关系需要关联多个人的基因数据。
+
+不同人的多个文件需要合并为一个文件。查看[合并](http://www.cog-genomics.org/plink/1.9/data#merge_list)的更多消息
 
 ```cmd
-plink --file [filename1] --merge-list allfiles.txt --make-bed --out mynewdata
+plink --file [filename1] --merge-list merge.txt --make-bed --out mydata
 ```
 
+`[filename1]`为基准文件，与其他人的数据合并。
+
+`--merge-list merge.txt`为需要合并的其他人的文件列表，格式为：
+```
+user_2.ped user_2.map
+user_3.ped user_3.map
+```
+如果`--out mydata`默认输出 mydata 文件名的相关数据，否则默认为 plink 文件名。
+
+例如：
+
+```cmd
+
+```
 ## 使用 King 计算亲属关系
 
 
