@@ -100,9 +100,11 @@ cat king.kin0
 
 #### 安装R
 
-[R 镜像列表](https://cran.r-project.org/mirrors.html),[R China 中科大镜像](https://mirrors.ustc.edu.cn/CRAN/)，下载 R-3.4.4版本安装。
+[R 镜像列表](https://cran.r-project.org/mirrors.html)
 
-#### 安装SNPRelate
+[R China 中科大镜像](https://mirrors.ustc.edu.cn/CRAN/)，下载 R-3.4.4版本安装。
+
+#### 安装 SNPRelate
 
 一个 R 包, [SNPRelate](https://bioconductor.org/packages/release/bioc/html/SNPRelate.html)。
 
@@ -124,10 +126,10 @@ biocLite("SNPRelate")
 
 ![install](/pictrue/Snipaste_2018-03-24_16-41-10.png)
 
-### 生成 gds 数据
+### 生成 gds 数据
 
 SNPRelate 使用自有的 gds 数据格式。可以使用下面命令将 PLINK 的二进制数据文件转化为 gds 数据格式。
-启动 R ，加载 SNPRelate：`library(SNPRelate)`
+启动 R，加载 SNPRelate：`library(SNPRelate)`
 
 ```cmd
 bed.fn <- "mydata.bed"
