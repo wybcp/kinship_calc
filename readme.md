@@ -100,7 +100,7 @@ cat king.kin0
 
 #### 安装R
 
-[R 镜像列表](https://cran.r-project.org/mirrors.html)
+[R 镜像列表](https://cran.r-project.org/mirrors.html)
 
 [R China 中科大镜像](https://mirrors.ustc.edu.cn/CRAN/)，下载 R-3.4.4版本安装。
 
